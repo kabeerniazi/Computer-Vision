@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Vision: Morphology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav style="background-color: #1a252f; padding: 10px 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+   
+    <a href="index.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">1. Point Processing</a>
+    <a href="spatial.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">2. Spatial Filtering</a>
+    <a href="morphology.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">3. Morphology</a>
+    <a href="segmentation.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">4. Segmentation</a>
+   
+</nav>
+
+
+    <header>
+        <h1>Interactive Image Processing</h1>
+        <p>Module A: Morphological Operations (Binary Images)</p>
+    </header>
+
+    <div class="toolbar">
+        <div class="control-group">
+            <label for="imageUpload">1. Upload Image:</label>
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+
+        <div class="control-group">
+            <label for="morphSelect">2. Select Operation:</label>
+            <select id="morphSelect">
+                <option value="original">Original (Binarized)</option>
+                <option value="erosion">Erosion (Shrink)</option>
+                <option value="dilation">Dilation (Expand)</option>
+                <option value="opening">Opening (Remove White Noise)</option>
+                <option value="closing">Closing (Fill Black Holes)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="seSelect">3. Structuring Element:</label>
+            <select id="seSelect">
+                <option value="square">3x3 Square</option>
+                <option value="cross">3x3 Cross</option>
+            </select>
+        </div>
+        
+        <div id="matrixDisplay" class="control-group">
+            <label>Structuring Element:</label>
+            <div id="seGrid" class="formula" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; text-align: center;">
+                </div>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <div class="canvas-container">
+            <h3>Original (Binary Threshold)</h3>
+            <canvas id="canvasOriginal"></canvas>
+        </div>
+        <div class="canvas-container">
+            <h3>Morphological Output</h3>
+            <canvas id="canvasProcessed"></canvas>
+        </div>
+    </div>
+
+    <script src="morphology.js"></script>
+</body>
+</html>

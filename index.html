@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Vision: Point Processing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav style="background-color: #1a252f; padding: 10px 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+  
+    <a href="index.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">1. Point Processing</a>
+    <a href="spatial.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">2. Spatial Filtering</a>
+    <a href="morphology.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">3. Morphology</a>
+    <a href="segmentation.html" style="color: white; text-decoration: none; font-size: 14px; font-weight: bold; padding: 8px 12px;">4. Segmentation</a>
+  
+</nav>
+
+
+    <header>
+        <h1>Interactive Image Processing</h1>
+        <p>Module A: Point Processing Algorithms</p>
+    </header>
+
+    <div class="toolbar">
+        <div class="control-group">
+            <label for="imageUpload">1. Upload Image:</label>
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+
+        <div class="control-group">
+            <label for="algorithmSelect">2. Select Algorithm:</label>
+            <select id="algorithmSelect">
+                <option value="original">Original (None)</option>
+                <option value="negation">Image Negation</option>
+                <option value="thresholding">Thresholding</option>
+                <option value="logarithmic">Logarithmic Transformation</option>
+                <option value="gamma">Power-Law (Gamma)</option>
+            </select>
+        </div>
+
+        <div id="parameters" class="control-group" style="display: none;">
+            <label id="sliderLabel" for="paramSlider">Parameter:</label>
+            <input type="range" id="paramSlider" min="0" max="255" step="1" value="127">
+            <span id="sliderValue">127</span>
+            <div id="formulaDisplay" class="formula"></div>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <div class="canvas-container">
+            <h3>Original Image</h3>
+            <canvas id="canvasOriginal"></canvas>
+        </div>
+        <div class="canvas-container">
+            <h3>Processed Image</h3>
+            <canvas id="canvasProcessed"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
